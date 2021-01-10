@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+
+// 1. Import the initial variables
+@import "~bulma/sass/utilities/initial-variables.sass";
+@import "~bulma/sass/utilities/functions.sass";
+
+//Font & text
+$family-serif: "Ubuntu", sans-serif;
+$family-titles: "Quicksand", sans-serif;
+$family-primary: $family-serif;
+$family-secondary: $family-titles;
+
+$size-1: 4.2rem;
+
+//Color
+$primary: #268b52;
+$primary-light: #8bd4a4;
+
+$brown: #633a21;
+$brown-invert: findColorInvert($brown);
+$brown-light: #c98f4d;
+
+$dark-color: #0a232d;
+$dark: $dark-color;
+
+$light: rgb(250, 250, 250);
+$light-invert: findColorInvert($light);
+
+$link: $primary;
+$link-hover: $primary-light;
+
+$tabs-toggle-link-active-color: $primary-light;
+$footer-background-color: $primary-light;
+$background: $primary-light;
+
+$card-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.2),
+  0 0px 0 1px rgba(#000000, 0.04);
+
+@import "~bulma/sass/utilities/derived-variables.sass";
+$addColors: (
+  "secondary": (
+    $brown,
+    $brown-invert,
+  ),
+);
+$colors: map-merge($colors, $addColors);
+
+@import "~bulma/bulma.sass";
+
+
+
+.no-hover {
+  pointer-events: none;
+}
+
+body {
+  background-color: $dark;
+}
+
+nav .navbar-item img {
+  max-height: 3rem;
+}
+
+section#header.hero .hero-body {
+  text-shadow: 0.3em 0.3em 0.3em #040d09, -1px -1px 2px #040d09,
+    1px -1px 2px #040d09, -1px 1px 2px #040d09, 1px 1px 2px #040d09;
+}
+
+section.hero, .hero-foot, nav {
+  position: sticky;
+}
+
+section#portfolio .card {
+  background-color: $dark;
+  border: 1px solid $primary-light;
+}

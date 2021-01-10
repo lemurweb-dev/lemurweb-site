@@ -1,0 +1,18 @@
+
+div #back-particles {
+    position: absolute;
+    top:-5vh;
+    left:-5vh;
+    width: 110vw;
+    height: 110vh;
+    z-index: 0;
+}
+
+div #front-particles {
+    position: absolute;
+    top:-5vh;
+    left:-5vh;
+    width: 110vw;
+    height: 110vh;
+    z-index: 0;
+}
