@@ -1,20 +1,19 @@
-import React from "react";
+import React from "react"
 import Image from "gatsby-image"
-import { withGetScreen } from "react-getscreen";
+import { withGetScreen } from "react-getscreen"
 
-import Particles from "react-tsparticles";
-import leaf_1 from "../images/leaf1.png";
-import leaf_2 from "../images/leaf2.png";
-import leaf_3 from "../images/leaf3.png";
-import leaf_4 from "../images/leaf4.png";
+import Particles from "react-tsparticles"
+import leaf_1 from "../images/leaf1.png"
+import leaf_2 from "../images/leaf2.png"
+import leaf_3 from "../images/leaf3.png"
+import leaf_4 from "../images/leaf4.png"
 
-import "../styles/background.css";
+import "../styles/background.css"
 
+const Background = props => {
+  // const { innerWidth: width, innerHeight: height } = window;
 
-const Background = (props) => {
-  const { innerWidth: width, innerHeight: height } = window;
-
-  const repulseAmount = props.isMobile() ? height * 0.65 : width * 0.65;
+  // const repulseAmount = props.isMobile() ? height * 0.65 : width * 0.65;
 
   return (
     <>
@@ -163,7 +162,8 @@ const Background = (props) => {
         }}
       /> */}
     </>
-  );
-};
+  )
+}
 
-export default withGetScreen(Background);
+// export default withGetScreen(Background);
+export default Background;
