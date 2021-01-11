@@ -1,11 +1,11 @@
 
 div #back-particles {
-    position: absolute;
+    position: fixed;
     top:-5vh;
     left:-5vh;
     width: 110vw;
     height: 110vh;
-    z-index: 0;
+    z-index: -1;
 }
 
 div #front-particles {

@@ -1,16 +1,16 @@
+import React from "react"
 import { Link } from "gatsby"
 import Image from "gatsby-image"
-import React from "react"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
-import Background from "./Background"
+
 
 import { MdBuild, MdExplore, MdRemoveRedEye } from "react-icons/md"
 
 const Header = ({ logo }) => (
-  <section id="header" className="hero is-dark is-large">
-    <Background />
-    <div className="hero-head">
+  <section id="header" className="hero is-large">
+    
+    {/* <div className="hero-head">
       <nav className="navbar">
         <div className="container">
           <div className="navbar-brand">
@@ -26,7 +26,7 @@ const Header = ({ logo }) => (
           <div id="lemurnav" className="navbar-menu"></div>
         </div>
       </nav>
-    </div>
+    </div> */}
 
     <div className="hero-body">
       <div className="container has-text-centered">

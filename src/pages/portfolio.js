@@ -1,24 +1,23 @@
 import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
-import Header from "../components/header"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import PortfolioSection from "../components/portfolio"
 
-const IndexPage = ({ data }) => {
+const PortfolioPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="lemurweb" />
-      <Header />
+      <PortfolioSection />
     </Layout>
   )
 }
 
-export default IndexPage
+export default PortfolioPage
 export const pageQuery = graphql`
-  query indexPageQuery {
+  query portfolioPageQuery {
     watchImg: file(relativePath: { eq: "lemur_happy.png" }) {
       childImageSharp {
         fluid {
