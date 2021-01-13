@@ -14,12 +14,13 @@ const Navbar = () => {
     <>
       <div
         className={`nav-lemur ${showDropdown ? "nav-show-logo" : ""}`}
+        onClick={() => setShowDropdown(!showDropdown)}
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
       >
         <img src={logo} />
         <article
-          className={`panel nav-panel has-background-dark ${
+          className={`panel nav-panel has-background-dark is-flex is-flex-direction-column-reverse ${
             showDropdown ? "nav-show-panel" : ""
           }`}
         >

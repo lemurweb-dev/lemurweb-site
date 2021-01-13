@@ -28,7 +28,7 @@ const Header = ({ logo }) => (
           className="subtitle is-size-4 has-text-weight-semibold has-text-dark is-inline-block"
         >
           <div>Scopri come!</div>
-          <div className="is-size-3"><FaAngleDown/></div>
+          <div className="is-size-3 mb-5"><FaAngleDown/></div>
         </AnchorLink>
       </div>
     </div>

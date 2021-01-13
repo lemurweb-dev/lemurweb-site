@@ -72,13 +72,14 @@ footer {
 }
 
 .nav-lemur {
+  cursor: pointer;
   width: 11vh;
   height: 11vh;
   position: fixed;
   left: 0;
-  bottom: 0;
+  top: 0;
   background-color: $dark-color;
-  border-radius: 0 98% 0 0;
+  border-radius: 0 0 98% 0;
   box-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.6),
     0 0px 0 1px rgba(#000000, 0.15);
   z-index: 3;
@@ -89,17 +90,17 @@ footer {
     position: absolute;
     left: 3%;
     z-index: 5;
-    bottom: -5%;
+    top: -5%;
   }
 
   .nav-panel {
     position: relative;
-    bottom: -100%;
+    top: -200%;
     left: 0;
     min-width: 100%;
-    border-radius: 0 6px 0 0;
+    border-radius: 0 0 6px 0;
     z-index: 2;
-    height: 200%;
+    height: 210%;
     transform: translate(0px);
     transform-origin: bottom;
     -webkit-transition: transform 0.15s ease-in;
@@ -124,7 +125,7 @@ footer {
     }
   }
   .nav-show-panel {
-    transform: translate(0px, -100%);
+    transform: translate(0px, 100%);
   }
 }
 
