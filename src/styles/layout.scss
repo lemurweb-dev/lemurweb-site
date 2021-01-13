@@ -17,9 +17,9 @@ $size-1: 4.2rem;
 $primary: #268b52;
 $primary-light: #91dfac;
 
-$brown: #633a21;
+$brown: #5a351f;
 $brown-invert: findColorInvert($brown);
-$brown-light: #c98f4d;
+$brown-light: #d1a36e;
 
 $dark-color: #0a232d;
 $dark: $dark-color;
@@ -27,18 +27,18 @@ $dark: $dark-color;
 $light: rgb(250, 250, 250);
 $light-invert: findColorInvert($light);
 
-$link: $primary;
-$link-hover: $primary-light;
+$link: $brown-light;
+$link-hover: $brown;
 
-$tabs-toggle-link-active-color: $primary-light;
-$footer-background-color: $primary-light;
 $background: $primary-light;
 
 $panel-item-border: 0;
 $panel-radius: 0;
 
-$card-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.2),
-  0 0px 0 1px rgba(#000000, 0.04);
+$hr-height: 1px;
+
+$card-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.4),
+  0 0px 0 1px rgba(#000000, 0.08);
 
 @import "~bulma/sass/utilities/derived-variables.sass";
 $addColors: (
@@ -50,66 +50,88 @@ $addColors: (
 $colors: map-merge($colors, $addColors);
 
 @import "~bulma/bulma.sass";
+@import "./divider.css";
+@import "./background.css";
 
 .no-hover {
   pointer-events: none;
 }
 
 html {
-  background-color: $dark;
+  background-color: $primary-light;
+}
+
+//Footer 
+footer {
+  a {
+    color: $dark-color;
+    &:hover {
+      color: $primary;
+    }
+  }
 }
 
 .nav-lemur {
-  width: 12vh;
-  height: 12vh;
+  width: 11vh;
+  height: 11vh;
   position: fixed;
   left: 0;
   bottom: 0;
-  background-color: $primary-light;
+  background-color: $dark-color;
   border-radius: 0 98% 0 0;
-  z-index: 20;
+  box-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.6),
+    0 0px 0 1px rgba(#000000, 0.15);
+  z-index: 3;
 
   img {
     width: 85%;
     height: 85%;
     position: absolute;
     left: 3%;
+    z-index: 5;
     bottom: -5%;
-    z-index: 21;
   }
 
   .nav-panel {
     position: relative;
-    bottom: 120%;
+    bottom: -100%;
     left: 0;
     min-width: 100%;
     border-radius: 0 6px 0 0;
-    z-index: 0;
+    z-index: 2;
+    height: 200%;
+    transform: translate(0px);
+    transform-origin: bottom;
+    -webkit-transition: transform 0.15s ease-in;
+    transition: transform 0.15s ease-in;
+
+    .nav-text {
+      opacity: 0;
+      -webkit-transition: opacity 0.22s ease-in 0.12s;
+      transition: opacity 0.22s ease-in 0.12s;
+    }
+    .nav-show-text {
+      opacity: 1;
+    }
 
     .panel-block {
       a {
-        color: $dark-color;
+        color: $primary-light;
       }
       a:hover {
-        color: $brown;
+        color: $primary;
       }
     }
   }
-  .nav-panel::after {
-    content: "";
-    z-index: 0;
-    background-color: $primary-light;
-    width: 100%;
-    height: 200%;
-    position: absolute;
-    top: 99%;
-    left: 0;
+  .nav-show-panel {
+    transform: translate(0px, -100%);
   }
 }
 
 section#header.hero .hero-body {
-  text-shadow: 0.3em 0.3em 0.3em #040d09, -1px -1px 2px #040d09,
-    1px -1px 2px #040d09, -1px 1px 2px #040d09, 1px 1px 2px #040d09;
+  text-shadow: 0.15em 0.15em 0.5em rgba($dark-color, 1),
+    -1px -1px 2px rgba($dark-color, 1), 1px -1px 2px rgba($dark-color, 1),
+    -1px 1px 2px rgba($dark-color, 1), 1px 1px 2px rgba($dark-color, 1);
 }
 
 section.hero,
@@ -118,7 +140,98 @@ nav {
   position: sticky;
 }
 
+//portfolio
+
 section#portfolio .card {
   background-color: $dark;
   border: 1px solid $primary-light;
+
+  // a {
+  //   color: $primary;
+  //   &:hover {
+  //     color: $brown;
+  //   }
+  // }
+
+}
+
+//sezioni home
+section#work {
+
+  margin-top: 11vh;
+
+  section {
+    position: relative;
+  }
+  section::before {
+    content: "";
+    position: absolute;
+    width: 160%;
+    height: 120%;
+    top: -7%;
+    left: -50%;
+    z-index: -1;
+  }
+  section#orientate {
+    h2 {
+      color: $primary-light;
+    }
+    h4 {
+      color: $primary-light;
+    }
+    h6 {
+      color: $white;
+    }
+    
+    color: white;
+    &:before {
+      background-color: $brown;
+      -webkit-transform: rotate(-2deg);
+      -moz-transform: rotate(-2deg);
+      -ms-transform: rotate(-2deg);
+      -o-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+    }
+  }
+  section#explore {
+    h2 {
+      color: $dark;
+    }
+    h4 {
+      color: $dark;
+    }
+    h6 {
+      color: $brown;
+    }
+    color: $brown;
+    &:before {
+      background-color: $primary-light;
+      -webkit-transform: rotate(2deg);
+      -moz-transform: rotate(2deg);
+      -ms-transform: rotate(2deg);
+      -o-transform: rotate(2deg);
+      transform: rotate(2deg);
+    }
+  }
+  section#build {
+    h2 {
+      color: $primary;
+    }
+    h4 {
+      color: $primary;
+    }
+    h6 {
+      color: $dark;
+    }
+    color: $dark;
+    &:before {
+      background-color: $white;
+      -webkit-transform: rotate(-2deg);
+      -moz-transform: rotate(-2deg);
+      -ms-transform: rotate(-2deg);
+      -o-transform: rotate(-2deg);
+      transform: rotate(-2deg);
+      height: 110%;
+    }
+  }
 }

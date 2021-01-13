@@ -1,0 +1,24 @@
+.hr-shadow { 
+   border: 0; 
+   height: 1px;
+   position: relative;
+   margin: 1em 1em;
+}
+.hr-shadow:before {
+   top: -0.25em;
+   height: 0.5em;
+}
+.hr-shadow:after {
+   height: 0.5em;
+   top: calc(-0.5em + 1px);        /* adjusted this */
+}
+
+.hr-shadow:before {
+   content: '';
+   position: absolute;
+   width: 100%;
+}
+
+.hr-shadow, .hr-shadow:before {
+   background: radial-gradient(ellipse at center, rgba(0,0,0,0.08) 0%, rgba(0,0,0,0) 75%);
+}

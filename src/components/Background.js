@@ -8,8 +8,6 @@ import leaf_2 from "../images/leaf2.png"
 import leaf_3 from "../images/leaf3.png"
 import leaf_4 from "../images/leaf4.png"
 
-import "../styles/background.css"
-
 const Background = props => {
   // const { innerWidth: width, innerHeight: height } = window;
 
@@ -51,7 +49,7 @@ const Background = props => {
               value: 45,
             },
             opacity: {
-              value: 0.15,
+              value: 0.4,
             },
             shape: {
               type: "image",

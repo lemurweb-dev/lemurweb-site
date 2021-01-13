@@ -4,9 +4,9 @@ import { useStaticQuery, graphql } from "gatsby"
 import { IconContext } from "react-icons"
 
 import "../styles/layout.scss"
+
 import { siteMetadata } from "../../gatsby-config"
 import Footer from "./footer"
-import ContactModal from "./contactModal"
 import Navbar from "./navbar"
 import Background from "./Background"
 
@@ -28,9 +28,6 @@ const Layout = ({ children }) => {
     }
   `)
 
-  const [showContactModal, setShowContactModal] = useState(false)
-  const [sentMail, setSentMail] = useState(false)
-
   return (
     <>
       <IconContext.Provider value={{ style: { verticalAlign: "middle" } }}>
@@ -38,14 +35,7 @@ const Layout = ({ children }) => {
         <Navbar logo={data.logo.childImageSharp.fluid} />
 
         <main>{children}</main>
-        <Footer showModal={setShowContactModal} sentMail={sentMail} />
-
-        {showContactModal && !sentMail && (
-          <ContactModal
-            showModal={setShowContactModal}
-            setSentMail={setSentMail}
-          />
-        )}
+        <Footer />
       </IconContext.Provider>
     </>
   )

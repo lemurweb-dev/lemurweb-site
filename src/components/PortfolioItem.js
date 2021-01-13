@@ -7,7 +7,7 @@ const PortfolioItem = ({ id, title, subtitle, image, link, description }) => {
       <div className="hero-body py-5">
         <div className="container">
           <div className="card">
-            <div className="card-content has-text-centered">
+            <div className="card-content has-text-centered p-3">
               <div className="columns is-vcentered">
                 <div className="column is-4">
                   <a

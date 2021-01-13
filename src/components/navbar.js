@@ -13,18 +13,28 @@ const Navbar = () => {
   return (
     <>
       <div
-        className="nav-lemur"
+        className={`nav-lemur ${showDropdown ? "nav-show-logo" : ""}`}
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
       >
         <img src={logo} />
-        {showDropdown && (
-          <article className="panel nav-panel has-background-primary-light">
-            <div class="panel-block pl-2"><Link to="/">Home</Link></div>
-            <div class="panel-block pl-2"><Link to="/portfolio">Portfolio</Link></div>
-            <div class="panel-block pl-2"><Link to="/contact">Contatti</Link></div>
-          </article>
-        )}
+        <article
+          className={`panel nav-panel has-background-dark ${
+            showDropdown ? "nav-show-panel" : ""
+          }`}
+        >
+          <div className={`nav-text ${showDropdown ? "nav-show-text" : ""}`}>
+            <div className="panel-block pl-2">
+              <Link to="/">Home</Link>
+            </div>
+            <div className="panel-block pl-2">
+              <Link to="/portfolio">Portfolio</Link>
+            </div>
+            <div className="panel-block pl-2">
+              <Link to="/contact">Contatti</Link>
+            </div>
+          </div>
+        </article>
       </div>
     </>
   )

@@ -34,10 +34,10 @@ const PortfolioSection = () => {
   return (
     <>
       <section id="portfolio">
-        <section class="hero is-primary mb-5">
+        <section class="hero mb-5">
           <div class="hero-body">
             <div class="container has-text-centered">
-              <h1 class="title">Portfolio</h1>
+              <h1 class="subtitle is-family-secondary is-size-1 has-text-dark">Portfolio</h1>
             </div>
           </div>
         </section>
