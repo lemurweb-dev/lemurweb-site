@@ -25,7 +25,7 @@ const ContactSection = () => {
       "service_gmail",
       "template_lemur",
       templateParams,
-      process.env("GATSBY_EMAILJS_KEY")
+      process.env.GATSBY_EMAILJS_KEY
     )
     resetForm()
   }
