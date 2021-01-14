@@ -14,11 +14,9 @@ const Navbar = () => {
     <>
       <div
         className={`nav-lemur ${showDropdown ? "nav-show-logo" : ""}`}
-        //onClick={() => setShowDropdown(!showDropdown)}
+        onTouchEnd={() => setShowDropdown(true)}
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
-        onTouchStart={() => setShowDropdown(true)}
-        onTouchEnd={() => setShowDropdown(false)}
       >
         <img src={logo} />
         <article
@@ -27,13 +25,13 @@ const Navbar = () => {
           }`}
         >
           <div className={`nav-text ${showDropdown ? "nav-show-text" : ""}`}>
-            <div className="panel-block pl-1">
+            <div className="panel-block">
               <Link to="/">Home</Link>
             </div>
-            <div className="panel-block pl-1">
+            <div className="panel-block">
               <Link to="/portfolio">Portfolio</Link>
             </div>
-            <div className="panel-block pl-1">
+            <div className="panel-block">
               <Link to="/contact">Contatti</Link>
             </div>
           </div>

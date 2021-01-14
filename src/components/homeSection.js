@@ -6,9 +6,9 @@ const HomeSection = ({ id, title, subtitle, head, body, image, odd }) => {
   return (
     <section id={id}>
       <div className="hero is-medium">
-        <div className="hero-body py-6">
+        <div className="hero-body py-5">
           <div className="container">
-            <div className={`columns is-vcentered my-5 ${odd?"is-flex-direction-row-reverse":""}`}>
+            <div className={`columns is-vcentered my-4 ${odd?"is-flex-direction-row-reverse":""}`}>
               <div className="column is-5 p-6">
                 <Img fluid={image} className="mx-6" />
               </div>

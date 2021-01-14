@@ -10,10 +10,10 @@ const Header = ({ logo }) => (
     <div className="hero-body pb-0">
       <div className="container has-text-centered">
         <div className="container has-text-centered is-family-secondary">
-          <h1 className="mb-6 subtitle is-size-1-touch is-size-1-desktop has-text-primary is-unselectable">
+          <h1 className="mb-6 subtitle is-size-2-touch is-size-1-desktop has-text-primary is-unselectable strong-shadow">
             Il web è una <span className="has-text-secondary">giungla</span>!
           </h1>
-          <h2 className="subtitle is-size-4-touch is-size-3-desktop has-text-secondary has-text-weight-semibold is-unselectable">
+          <h2 className="subtitle is-size-4-touch is-size-3-desktop has-text-secondary has-text-weight-semibold is-unselectable weak-shadow">
             Il <span className="has-text-primary">lemure digitale</span>{" "}
             può aiutarti a trovare la strada
           </h2>
@@ -25,10 +25,10 @@ const Header = ({ logo }) => (
       <div className="container has-text-centered mb-6">
         <AnchorLink
           to="/#work"
-          className="subtitle is-size-4 has-text-weight-semibold has-text-dark is-inline-block"
+          className="subtitle is-size-6-mobile is-size-4 has-text-weight-semibold has-text-dark is-inline-block"
         >
           <div>Scopri come!</div>
-          <div className="is-size-3 mb-5"><FaAngleDown/></div>
+          <div className="is-size-5-mobile is-size-3 mb-5"><FaAngleDown/></div>
         </AnchorLink>
       </div>
     </div>

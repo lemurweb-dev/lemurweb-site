@@ -19,7 +19,7 @@ const Footer = () => {
           href="https://www.buymeacoffee.com/lemurweb"
           className=" is-inline-block"
         >
-          <div className="mt-5 is-size-5">
+          <div className="mt-5 is-size-3">
             <BiCoffeeTogo />
           </div>
           <div className="is-size-7">buymeacoffee.com</div>

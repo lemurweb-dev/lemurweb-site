@@ -12,6 +12,7 @@ $family-primary: $family-serif;
 $family-secondary: $family-titles;
 
 $size-1: 4.2rem;
+$size-2: 3.3rem;
 
 //Color
 $primary: #268b52;
@@ -37,8 +38,8 @@ $panel-radius: 0;
 
 $hr-height: 1px;
 
-$card-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.4),
-  0 0px 0 1px rgba(#000000, 0.08);
+$card-shadow: 0 0.5em 1.5em -0.125em rgba(#000000, 0.65),
+  0 0px 0 1px rgba(#000000, 0.2);
 
 @import "~bulma/sass/utilities/derived-variables.sass";
 $addColors: (
@@ -59,13 +60,13 @@ $colors: map-merge($colors, $addColors);
 
 html {
   background-color: $primary-light;
-  
 }
-html, body {
+html,
+body {
   overflow-x: hidden;
 }
 
-//Footer 
+//Footer
 footer {
   a {
     color: $dark-color;
@@ -76,20 +77,21 @@ footer {
 }
 
 .nav-lemur {
-  width: 12vh;
-  height: 12vh;
+  width: 16vw;
+  height: 16vw;
+  max-width: 12vh;
+  max-height: 12vh;
   position: fixed;
   left: 0;
   top: 0;
   background-color: $dark-color;
   border-radius: 0 0 100% 0;
-  box-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.6),
-    0 0px 0 1px rgba(#000000, 0.15);
+  box-shadow: $card-shadow;
   z-index: 3;
 
   img {
     width: 85%;
-    height: 85%;
+    height: width;
     position: absolute;
     left: 3%;
     z-index: 5;
@@ -104,7 +106,7 @@ footer {
     border-radius: 0 0 7px 0;
     z-index: 2;
     height: 27vh;
-    
+
     transform: translate(0px);
     transform-origin: bottom;
     -webkit-transition: transform 0.15s ease-in;
@@ -112,14 +114,15 @@ footer {
 
     .nav-text {
       opacity: 0;
-      -webkit-transition: opacity 0.22s ease-in 0.12s;
-      transition: opacity 0.22s ease-in 0.12s;
+      -webkit-transition: opacity 0.22s ease-in 0.15s;
+      transition: opacity 0.22s ease-in 0.15s;
     }
     .nav-show-text {
       opacity: 1;
     }
 
     .panel-block {
+      padding-left: 0.8vw;
       a {
         color: $primary-light;
       }
@@ -130,15 +133,27 @@ footer {
   }
   .nav-show-panel {
     transform: translate(0px, 26vh);
-    box-shadow: 0 0.5em 1em -0.125em rgba(#000000, 0.6),
-    0 0px 0 1px rgba(#000000, 0.15);
+    box-shadow: $card-shadow;
   }
+}
+.nav-show-logo {
+  width: 14vh;
+  -webkit-transition: transform 0.11s ease-in;
+  transition: transform 0.11s ease-in;
 }
 
 section#header.hero .hero-body {
-  text-shadow: 0.15em 0.15em 0.5em rgba($dark-color, 1),
-    -1px -1px 2px rgba($dark-color, 1), 1px -1px 2px rgba($dark-color, 1),
-    -1px 1px 2px rgba($dark-color, 1), 1px 1px 2px rgba($dark-color, 1);
+  .strong-shadow {
+    text-shadow: 0.1em 0.1em 0.3em rgba($dark-color, 1),
+      -1px -1px 2px rgba($dark-color, 1), 1px -1px 2px rgba($dark-color, 1),
+      -1px 1px 2px rgba($dark-color, 1), 1px 1px 2px rgba($dark-color, 1);
+  }
+  .weak-shadow {
+    text-shadow: 0.05em 0.05em 0.2em rgba($dark-color, 0.4),
+      -1px -1px 1px rgba($dark-color, 0.75),
+      1px -1px 1px rgba($dark-color, 0.75), -1px 1px 1px rgba($dark-color, 0.75),
+      1px 1px 1px rgba($dark-color, 0.75);
+  }
 }
 
 section.hero,
@@ -152,19 +167,10 @@ nav {
 section#portfolio .card {
   background-color: $dark;
   border: 1px solid $primary-light;
-
-  // a {
-  //   color: $primary;
-  //   &:hover {
-  //     color: $brown;
-  //   }
-  // }
-
 }
 
 //sezioni home
 section#work {
-
   margin-top: 11vh;
 
   section {
@@ -175,9 +181,9 @@ section#work {
     position: absolute;
     width: 160%;
     height: 120%;
-    top: -7%;
+    top: 0%;
     left: -50%;
-    z-index: -1;
+    z-index: 0;
   }
   section#orientate {
     h2 {
@@ -189,7 +195,7 @@ section#work {
     h6 {
       color: $white;
     }
-    
+
     color: white;
     &:before {
       background-color: $brown;
