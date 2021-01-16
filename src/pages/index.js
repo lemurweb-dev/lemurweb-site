@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "../components/header"
@@ -6,7 +6,27 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import HomeSection from "../components/homeSection"
 
+import { RiSuitcaseLine } from "react-icons/ri"
+import { HiMail } from "react-icons/hi"
+
 const IndexPage = ({ data }) => {
+  const [readTime, setReadTime] = useState(0)
+  const [displayReadTime, setDisplayReadTime] = useState(0)
+  const [isCountingReadTime, setIsCountingReadTime] = useState(true)
+
+  useEffect(() => {
+    let intervalId
+
+    if (isCountingReadTime) {
+      intervalId = setInterval(() => {
+        setReadTime(readTime => readTime + 1)
+        setDisplayReadTime(parseFloat(readTime / 10).toFixed(1) + " s")
+      }, 100)
+    }
+
+    return () => clearInterval(intervalId)
+  }, [isCountingReadTime, readTime])
+
   return (
     <Layout>
       <SEO title="lemurweb" />
@@ -26,7 +46,7 @@ const IndexPage = ({ data }) => {
                 abbia in mente: <br />
                 siti vetrina, portfolio, e-commerce, blog, pagine di eventi.
               </p>
-              <div class="hr-shadow"/>
+              <div class="hr-shadow" />
               <p>
                 Il risultato? Uno spazio web personalizzato, creativo e di
                 qualità
@@ -48,7 +68,7 @@ const IndexPage = ({ data }) => {
                 distinguono dagli altri possono emergere. <br />
                 Il sito lo costruisco con le mie dita partendo dalle radici.
               </p>
-              <div class="hr-shadow"/>
+              <div class="hr-shadow" />
               <p>Creatività e originalità sono le cose più importanti</p>
             </>
           }
@@ -72,6 +92,61 @@ const IndexPage = ({ data }) => {
           }
           image={data.w.childImageSharp.fluid}
         />
+      </section>
+      <section id="read-time" className="hero mt-6 is-medium">
+        <div className="hero-body">
+          <div className="container">
+            <nav className="level">
+              <div className="level-item has-text-centered">
+                <div>
+                  <div className="heading mb-0">Grazie per aver dedicato</div>
+                  <div
+                    className="title my-3 is-clickable"
+                    onClick={() =>
+                      setIsCountingReadTime(
+                        isCountingReadTime => !isCountingReadTime
+                      )
+                    }
+                  >
+                    {displayReadTime}
+                  </div>
+                  <div className="heading">
+                    alla lettura della mia landing page!
+                  </div>
+                </div>
+              </div>
+            </nav>
+          </div>
+        </div>
+      </section>
+      <section id="know-me" className="hero is-primary mt-6 is-medium">
+        <div className="hero-body">
+          <div className="container">
+            <nav className="level">
+              <div className="level-item has-text-centered is-flex-direction-column">
+                <div>
+                  <RiSuitcaseLine className="is-size-3"/>
+                </div>
+                <Link to="/portfolio" className="link is-info">
+                  Portfolio
+                </Link>
+              </div>
+              <p className="level-item has-text-centered">
+                <h4 className="title is-family-secondary has-text-weight-light">
+                  Know Me
+                </h4>
+              </p>
+              <div className="level-item has-text-centered is-flex-direction-column">
+                <div>
+                  <HiMail  className="is-size-3"/>
+                </div>
+                <Link to="/contact" className="link is-info">
+                  Contatti
+                </Link>
+              </div>
+            </nav>
+          </div>
+        </div>
       </section>
     </Layout>
   )
