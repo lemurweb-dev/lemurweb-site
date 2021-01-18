@@ -14,10 +14,10 @@ const HomeSection = ({ id, title, subtitle, head, body, image, odd }) => {
               </div>
               <div className="column is-5">
                 <div className="content">
-                  <h2 className="subtitle is-size-2 is-family-secondary has-text-weight-normal mb-4 ">
+                  <h2 className="subtitle is-size-3-touch is-size-2-desktop is-family-secondary has-text-weight-normal mb-4 ">
                     {title}
                   </h2>
-                  <h4 className="subtitle is-size-5">{subtitle}</h4>
+                  <h4 className="subtitle is-size-6-touch is-size-5-desktop">{subtitle}</h4>
                   <h6 className="has-text-weight-bold mb-1">{head}</h6>
                   {body}
                 </div>

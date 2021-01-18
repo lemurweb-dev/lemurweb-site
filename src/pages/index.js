@@ -4,7 +4,9 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Header from "../components/header"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
 import HomeSection from "../components/homeSection"
+import ReadTimeSection from "../components/readTimeSection"
 
 import { RiSuitcaseLine } from "react-icons/ri"
 import { HiMail } from "react-icons/hi"
@@ -93,32 +95,9 @@ const IndexPage = ({ data }) => {
           image={data.w.childImageSharp.fluid}
         />
       </section>
-      <section id="read-time" className="hero mt-6 is-medium">
-        <div className="hero-body">
-          <div className="container">
-            <nav className="level">
-              <div className="level-item has-text-centered">
-                <div>
-                  <div className="heading mb-0">Grazie per aver dedicato</div>
-                  <div
-                    className="title my-3 is-clickable"
-                    onClick={() =>
-                      setIsCountingReadTime(
-                        isCountingReadTime => !isCountingReadTime
-                      )
-                    }
-                  >
-                    {displayReadTime}
-                  </div>
-                  <div className="heading">
-                    alla lettura della mia landing page!
-                  </div>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </div>
-      </section>
+      
+      <ReadTimeSection time={displayReadTime} setIsCountingReadTime={setIsCountingReadTime} />
+      
       <section id="know-me" className="hero is-primary mt-6 is-medium">
         <div className="hero-body">
           <div className="container">

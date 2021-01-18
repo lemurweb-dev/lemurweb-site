@@ -248,3 +248,22 @@ section#work {
     }
   }
 }
+
+
+@media screen and (max-width: $fullhd) {
+  .nav-panel {
+    max-height: 14rem;
+  }
+}
+
+@media screen and (min-width: $fullhd) {
+  .nav-panel {
+    max-height: 13.5rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  .nav-panel {
+    max-height: 20rem;
+  }
+}

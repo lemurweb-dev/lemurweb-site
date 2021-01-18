@@ -4,12 +4,14 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
+import PageHeader from "../components/pageHeader"
 import PortfolioSection from "../components/portfolio"
 
 const PortfolioPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="lemurweb" />
+      <SEO title="portfolio" />
+      <PageHeader title="Portfolio" subtitle={"Progetti passati, presenti e futuri"} />
       <PortfolioSection />
     </Layout>
   )
