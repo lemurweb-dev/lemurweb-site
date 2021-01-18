@@ -1,5 +1,4 @@
-import { Link, useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { useStaticQuery, graphql } from "gatsby"
 import React from "react"
 import PortfolioItem from "./PortfolioItem"
 
@@ -37,8 +36,7 @@ const PortfolioSection = () => {
         <PortfolioItem
           id="simonettacattini"
           title="Simonetta Cattini"
-          subtitle="Elegante sito portfolio con animazioni, galleria interattiva
-          (solo desktop)"
+          subtitle="Elegante sito portfolio con sfondo animato, galleria interattiva e sezione blog"
           link="https://simonettacattini.art"
           image={data.sc.childImageSharp.fluid}
           description={
@@ -61,8 +59,8 @@ const PortfolioSection = () => {
         <PortfolioItem
           id="marcellobuganza"
           title="Marcello Buganza"
-          subtitle="Sito portfolio super minimale con sezioni a blocchi"
-          link="https://celloart.netlify.app"
+          subtitle="Sito portfolio super minimale con sezioni full-screen e fumetto sfogliabile"
+          link="https://cello-art.netlify.app"
           image={data.ca.childImageSharp.fluid}
           description={
             <>

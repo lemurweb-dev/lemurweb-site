@@ -11,7 +11,7 @@ const PortfolioItem = ({ id, title, subtitle, image, link, description }) => {
               <div className="columns is-vcentered">
                 <div className="column is-4">
                   <a
-                    className="has-text-weight-semibold is-size-5"
+                    className="portfolio-item-title has-text-weight-semibold is-size-5"
                     href={link}
                   >
                     {title}

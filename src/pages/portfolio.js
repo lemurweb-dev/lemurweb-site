@@ -11,7 +11,7 @@ const PortfolioPage = ({ data }) => {
   return (
     <Layout>
       <SEO title="portfolio" />
-      <PageHeader title="Portfolio" subtitle={"Progetti passati, presenti e futuri"} />
+      <PageHeader title="Portfolio" subtitle={""} />
       <PortfolioSection />
     </Layout>
   )

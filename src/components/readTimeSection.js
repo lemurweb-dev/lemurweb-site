@@ -2,7 +2,7 @@ import React from "react"
 
 const ReadTimeSection = ({ time, setIsCountingReadTime }) => (
   <section id="read-time" className="hero mt-6 is-medium">
-    <div className="hero-body">
+    <div className="hero-body my-6">
       <div className="container">
          <div className="columns is-mobile is-gapless is-vcentered is-centered">
             <div className="column is-narrow is-size-1">{`{`}</div>

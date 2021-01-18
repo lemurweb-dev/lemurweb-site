@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
               </p>
             </>
           }
-          image={data.w.childImageSharp.fluid}
+          image={data.e.childImageSharp.fluid}
         />
         <HomeSection
           odd
@@ -74,7 +74,7 @@ const IndexPage = ({ data }) => {
               <p>Creatività e originalità sono le cose più importanti</p>
             </>
           }
-          image={data.w.childImageSharp.fluid}
+          image={data.e.childImageSharp.fluid}
         />
         <HomeSection
           id={"build"}
@@ -92,34 +92,37 @@ const IndexPage = ({ data }) => {
               </p>
             </>
           }
-          image={data.w.childImageSharp.fluid}
+          image={data.b.childImageSharp.fluid}
         />
       </section>
-      
-      <ReadTimeSection time={displayReadTime} setIsCountingReadTime={setIsCountingReadTime} />
-      
+
+      <ReadTimeSection
+        time={displayReadTime}
+        setIsCountingReadTime={setIsCountingReadTime}
+      />
+
       <section id="know-me" className="hero is-primary mt-6 is-medium">
         <div className="hero-body">
           <div className="container">
-            <nav className="level">
-              <div className="level-item has-text-centered is-flex-direction-column">
-                <div>
-                  <RiSuitcaseLine className="is-size-3"/>
-                </div>
+            <nav className="level mx-6">
+              <div className="level-item has-text-centered">
                 <Link to="/portfolio" className="link is-info">
+                  <div>
+                    <RiSuitcaseLine className="is-size-2" />
+                  </div>
                   Portfolio
                 </Link>
               </div>
-              <p className="level-item has-text-centered">
+              <p className="level-item has-text-centered my-5">
                 <h4 className="title is-family-secondary has-text-weight-light">
                   Know Me
                 </h4>
               </p>
-              <div className="level-item has-text-centered is-flex-direction-column">
-                <div>
-                  <HiMail  className="is-size-3"/>
-                </div>
+              <div className="level-item has-text-centered">
                 <Link to="/contact" className="link is-info">
+                  <div>
+                    <HiMail className="is-size-2" />
+                  </div>
                   Contatti
                 </Link>
               </div>
@@ -134,7 +137,14 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 export const pageQuery = graphql`
   query indexPageQuery {
-    w: file(relativePath: { eq: "lemur_happy.png" }) {
+    e: file(relativePath: { eq: "explore.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    b: file(relativePath: { eq: "build.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
