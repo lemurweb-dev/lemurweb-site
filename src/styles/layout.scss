@@ -175,6 +175,10 @@ section#portfolio .card {
     }
   }
 
+  .stack-item {
+    border-bottom: 1px solid white;
+  }
+
 }
 
 //sezioni home
@@ -252,10 +256,11 @@ section#work {
       -ms-transform: rotate(-2deg);
       -o-transform: rotate(-2deg);
       transform: rotate(-2deg);
-      //height: 95%;
+      height: 98%;
     }
   }
 }
+
 
 
 @media screen and (max-width: $fullhd) {

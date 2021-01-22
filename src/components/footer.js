@@ -19,11 +19,14 @@ const Footer = () => {
           href="https://www.buymeacoffee.com/lemurweb"
           className=" is-inline-block"
         >
-          <div className="mt-5 is-size-3">
+          <div className="mt-2 is-size-3">
             <BiCoffeeTogo />
           </div>
           <div className="is-size-7">buymeacoffee.com</div>
         </a>
+        <div className="mt-6">
+          lemur illustrations by <a href="http://cello-art.netlify.app">celloart</a>
+        </div>
       </div>
     </footer>
   )

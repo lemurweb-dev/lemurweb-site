@@ -1,7 +1,10 @@
 import React from "react"
 import Image from "gatsby-image"
+import StackItem from "./StackItem"
 
-const PortfolioItem = ({ id, title, subtitle, image, link, description }) => {
+import {BsLink45Deg} from "react-icons/bs"
+
+const PortfolioItem = ({ id, title, subtitle, image, link, stack }) => {
   return (
     <div id={id} className="hero is-primary-light is-medium">
       <div className="hero-body py-5">
@@ -17,7 +20,19 @@ const PortfolioItem = ({ id, title, subtitle, image, link, description }) => {
                     {title}
                   </a>
                   <p className="has-text-primary-light mb-2 mt-4">{subtitle}</p>
-                  <div className="has-text-light is-size-7 mt-4">{description}</div>
+                  <ul className="mt-4">
+                    {stack.map((s, i) => (
+                      <li index={i}>
+                        <StackItem tech={s} />
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    className="is-size-3 has-text-primary-light"
+                    href={link}
+                  >
+                    <BsLink45Deg />
+                  </a>
                 </div>
                 <div className="column">
                   <Image fluid={image} />

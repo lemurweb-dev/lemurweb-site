@@ -38,7 +38,7 @@ const Background = props => {
               enable: true,
               outMode: "bounce",
               random: true,
-              speed: 0.2,
+              speed: 0.5,
               straight: false,
             },
             number: {

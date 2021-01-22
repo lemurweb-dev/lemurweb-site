@@ -11,11 +11,13 @@
 .hr-shadow:after {
    height: 0.5em;
    top: calc(-0.5em + 1px);        /* adjusted this */
+   left: 0px;
 }
 
 .hr-shadow:before {
    content: '';
    position: absolute;
+   left: 0px;
    width: 100%;
 }
 

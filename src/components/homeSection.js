@@ -13,9 +13,8 @@ const HomeSection = ({ id, title, subtitle, head, body, image, odd }) => {
                 odd ? "is-flex-direction-row-reverse" : ""
               }`}
             >
-              {/* quando hai immagini modifica questo */}
-              {!image && (
-                <div className="column is-9 p-6">
+              {image && (
+                <div className="column is-5 p-6">
                   <Img fluid={image} className="mx-6" />
                 </div>
               )}

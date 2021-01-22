@@ -55,7 +55,7 @@ const IndexPage = ({ data }) => {
               </p>
             </>
           }
-          image={data.e.childImageSharp.fluid}
+          image={data.l.childImageSharp.fluid}
         />
         <HomeSection
           odd
@@ -137,6 +137,13 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 export const pageQuery = graphql`
   query indexPageQuery {
+    l: file(relativePath: { eq: "look.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
     e: file(relativePath: { eq: "explore.png" }) {
       childImageSharp {
         fluid {
