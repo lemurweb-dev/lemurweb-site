@@ -261,6 +261,14 @@ section#work {
   }
 }
 
+.rounded-image {
+  border: 0.2rem solid white;
+  border-radius: 50%;
+}
+
+.portfolio-image {
+  display: none;
+}
 
 
 @media screen and (max-width: $fullhd) {

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
+import Img from "gatsby-image"
 
 import Header from "../components/header"
 import Layout from "../components/layout"
@@ -48,7 +49,7 @@ const IndexPage = ({ data }) => {
                 abbia in mente: <br />
                 siti vetrina, portfolio, e-commerce, blog, pagine di eventi.
               </p>
-              <div class="hr-shadow" />
+              <div className="hr-shadow" />
               <p>
                 Il risultato? Uno spazio web personalizzato, creativo e di
                 qualità
@@ -70,7 +71,7 @@ const IndexPage = ({ data }) => {
                 distinguono dagli altri possono emergere. <br />
                 Il sito lo costruisco con le mie dita partendo dalle radici.
               </p>
-              <div class="hr-shadow" />
+              <div className="hr-shadow" />
               <p>Creatività e originalità sono le cose più importanti</p>
             </>
           }
@@ -113,11 +114,17 @@ const IndexPage = ({ data }) => {
                   Portfolio
                 </Link>
               </div>
-              <p className="level-item has-text-centered my-5">
-                <h4 className="title is-family-secondary has-text-weight-light">
-                  Know Me
-                </h4>
-              </p>
+              <div className="level-item has-text-centered my-5">
+                <div>
+                    <Img
+                      className="rounded-image mb-2"
+                      fluid={data.me.childImageSharp.fluid}
+                    />
+                  <h4 className="title is-family-secondary has-text-weight-light">
+                    Know Me
+                  </h4>
+                </div>
+              </div>
               <div className="level-item has-text-centered">
                 <Link to="/contact" className="link is-info">
                   <div>
@@ -152,6 +159,13 @@ export const pageQuery = graphql`
       }
     }
     b: file(relativePath: { eq: "build.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    me: file(relativePath: { eq: "me.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
