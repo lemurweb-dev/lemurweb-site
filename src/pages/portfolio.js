@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import PageHeader from "../components/pageHeader"
 import PortfolioSection from "../components/portfolio"
 
-const PortfolioPage = ({ data }) => {
+const PortfolioPage = () => {
   return (
     <Layout>
       <SEO title="portfolio" />
@@ -18,14 +18,3 @@ const PortfolioPage = ({ data }) => {
 }
 
 export default PortfolioPage
-export const pageQuery = graphql`
-  query portfolioPageQuery {
-    watchImg: file(relativePath: { eq: "lemur_happy.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

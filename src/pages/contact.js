@@ -7,7 +7,7 @@ import SEO from "../components/seo"
 import PageHeader from "../components/pageHeader"
 import ContactSection from "../components/contactSection"
 
-const ContactPage = ({ data }) => {
+const ContactPage = () => {
   return (
     <Layout>
       <SEO title="contact" />
@@ -18,14 +18,3 @@ const ContactPage = ({ data }) => {
 }
 
 export default ContactPage
-export const pageQuery = graphql`
-  query contactPageQuery {
-    watchImg: file(relativePath: { eq: "lemur_happy.png" }) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }
-`

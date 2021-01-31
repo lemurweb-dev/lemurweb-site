@@ -18,7 +18,7 @@ const Navbar = () => {
         onMouseEnter={() => setShowDropdown(true)}
         onMouseLeave={() => setShowDropdown(false)}
       >
-        <img src={logo} />
+        <img src={logo} alt="logo"/>
         <article
           className={`panel nav-panel has-background-dark is-flex is-flex-direction-column-reverse ${
             showDropdown ? "nav-show-panel" : ""

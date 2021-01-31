@@ -55,6 +55,7 @@ const PortfolioItem = ({ id, title, subtitle, images, link, stack }) => {
                       <Img
                         key={i}
                         fluid={img}
+                        alt={`portfolio-${i}`}
                         className={
                           i === imageIndex
                             ? `portfolio-image-visible`

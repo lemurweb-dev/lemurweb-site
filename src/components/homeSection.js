@@ -15,20 +15,20 @@ const HomeSection = ({ id, title, subtitle, head, body, image, odd }) => {
             >
               {image && (
                 <div className="column is-5 p-6">
-                  <Img fluid={image} className="mx-6" />
+                  <Img fluid={image} className="mx-6" alt={`home-${title}`} />
                 </div>
               )}
               <div className={`column is-5 ${
                 odd ? "has-text-right" : ""
               }`}>
                 <div className="content">
-                  <h2 className="subtitle is-size-3-touch is-size-2-desktop is-family-secondary has-text-weight-normal mb-4 ">
+                  <h2 className="home-section-title subtitle is-size-3-touch is-size-2-desktop is-family-secondary has-text-weight-normal mb-4 ">
                     {title}
                   </h2>
-                  <h4 className="subtitle is-size-6-touch is-size-5-desktop">
+                  <div className="home-section-subtitle subtitle is-size-6-touch is-size-5-desktop">
                     {subtitle}
-                  </h4>
-                  <h6 className="has-text-weight-bold mb-1">{head}</h6>
+                  </div>
+                  <div className="home-section-head has-text-weight-bold mb-1">{head}</div>
                   {body}
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
+import ReactTooltip from "react-tooltip"
 
 import Header from "../components/header"
 import Layout from "../components/layout"
@@ -47,7 +48,7 @@ const IndexPage = ({ data }) => {
               <p>
                 Posso aiutarti a realizzare qualunque tipo di spazio web tu
                 abbia in mente: <br />
-                siti vetrina, portfolio, e-commerce, blog, pagine di eventi.
+                sito vetrina, landing page, portfolio, e-commerce, blog..
               </p>
               <div className="hr-shadow" />
               <p>
@@ -63,16 +64,20 @@ const IndexPage = ({ data }) => {
           id={"explore"}
           title={"Esploriamo"}
           subtitle={"Addentriamoci nella progettazione del tuo spazio web"}
-          head={"Basta con i temi e siti pre-generati"}
+          head={"Basta con temi, template e siti pre-generati"}
           body={
             <>
               <p>
-                In mezzo alla enorme giungla del web, solo i siti che si
-                distinguono dagli altri possono emergere. <br />
-                Il sito lo costruisco con le mie dita partendo dalle radici.
+                Utilizzo solamente tecnologie che permettono di curare ogni
+                aspetto del progetto. <br />
+                Grazie a questi strumenti possiamo realizzare qualsiasi idea,
+                senza essere costretti da qualcosa di già preimpostato.
               </p>
               <div className="hr-shadow" />
-              <p>Creatività e originalità sono le cose più importanti</p>
+              <p>
+                In mezzo alla enorme giungla del web, solo chi si distingue
+                dagli altri può emergere.
+              </p>
             </>
           }
           image={data.e.childImageSharp.fluid}
@@ -87,14 +92,58 @@ const IndexPage = ({ data }) => {
           body={
             <>
               <p>
-                Utilizzo solamente le ultime tecnologie per offrirti un prodotto
-                che rimanga sempre attuale, mantenendo allo stesso tempo una
-                ottima qualità.
+                Oltre ad essere bello e funzionale, al giorno d'oggi un sito
+                deve assolutamente avere un ottimo valore{" "}
+                <span className="tooltip-highlight" data-tip data-for="seo">
+                  SEO
+                </span>{" "}
+                ed essere fluido e{" "}
+                <span
+                  className="tooltip-highlight"
+                  data-tip
+                  data-for="responsive"
+                >
+                  responsive
+                </span>
+                .
+                <br />
+                Di questo non dovrai preoccuparti.
               </p>
+              <div className="hr-shadow" />
+              <p>Ogni cosa che costruisco è testata per essere al top!</p>
             </>
           }
           image={data.b.childImageSharp.fluid}
         />
+        <ReactTooltip
+          className="tooltip"
+          id="seo"
+          type="info"
+          effect="float"
+          border
+          clickable
+          multiline
+        >
+          <span>
+            Search Engine Optimization.
+            <br />
+            Il sito deve essere ottimizzato per comparire nell'elenco delle
+            risposte dai motori di ricerca.
+          </span>
+        </ReactTooltip>
+        <ReactTooltip
+          className="tooltip"
+          id="responsive"
+          type="info"
+          effect="float"
+          border
+          clickable
+        >
+          <span>
+            Tecnica di web design che prevede che l'interfaccia del sito si
+            adatti automaticamente a qualsiasi dispositivo.
+          </span>
+        </ReactTooltip>
       </section>
 
       <ReadTimeSection
@@ -116,10 +165,11 @@ const IndexPage = ({ data }) => {
               </div>
               <div className="level-item has-text-centered my-5">
                 <div>
-                    <Img
-                      className="rounded-image mb-2"
-                      fluid={data.me.childImageSharp.fluid}
-                    />
+                  <Img
+                    className="rounded-image mb-2"
+                    fluid={data.me.childImageSharp.fluid}
+                    alt="me"
+                  />
                   <h4 className="title is-family-secondary has-text-weight-light">
                     Know Me
                   </h4>

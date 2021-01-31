@@ -198,13 +198,13 @@ section#work {
     z-index: 0;
   }
   section#orientate {
-    h2 {
+    .home-section-title {
       color: $primary-light;
     }
-    h4 {
+    .home-section-subtitle {
       color: $primary-light;
     }
-    h6 {
+    .home-section-head {
       color: $white;
     }
 
@@ -219,13 +219,13 @@ section#work {
     }
   }
   section#explore {
-    h2 {
+    .home-section-title {
       color: $dark;
     }
-    h4 {
+    .home-section-subtitle {
       color: $dark;
     }
-    h6 {
+    .home-section-head {
       color: $brown;
     }
     color: $brown;
@@ -239,13 +239,13 @@ section#work {
     }
   }
   section#build {
-    h2 {
+    .home-section-title {
       color: $primary;
     }
-    h4 {
+    .home-section-subtitle {
       color: $primary;
     }
-    h6 {
+    .home-section-head {
       color: $dark;
     }
     color: $dark;
@@ -268,6 +268,17 @@ section#work {
 
 .portfolio-image {
   display: none;
+}
+
+.tooltip-highlight {
+  color: $brown;
+  text-decoration: underline $brown dotted;
+}
+
+.tooltip {
+  font-size: 0.9rem !important;
+  max-width: 40vw !important;
+  padding: 8px !important;
 }
 
 
