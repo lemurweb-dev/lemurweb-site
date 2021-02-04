@@ -1,0 +1,60 @@
+div.menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  background-color: $dark-color;
+  box-shadow: $card-shadow;
+  z-index: 3;
+
+  border-radius: 0 0 4.5em 0;
+
+  -webkit-transition: top 0.15s ease-in;
+  transition: top 0.15s ease-in;
+
+  a {
+    color: $primary-light;
+    padding-left: 0.25em;
+    padding-right: 0.15em;
+
+    opacity: 1;
+
+    -webkit-transition: opacity 0.3s linear 0.15s;
+    transition: opacity 0.3s linear 0.15s;
+  }
+
+  .menu-list {
+    min-height: 7em;
+  }
+
+  img {
+    padding: 0 0.5em 0.15em 0.25em;
+    height: 9vh;
+  }
+}
+
+div.menu.menu-hide {
+  top: -7em;
+  a {
+    opacity: 0;
+  }
+}
+
+@media (max-width: $tablet) {
+  div.menu {
+    a {
+      font-size: 0.9em;
+    }
+    img {
+      height: 7.8vh;
+    }
+  }
+}
+@media (max-width: $widescreen) and (min-width: $tablet+1) {
+  div.menu img {
+    height: 8.5vh;
+  }
+  div.menu.menu-hide {
+    border-radius: 0 0 6.5em 0;
+  }
+}

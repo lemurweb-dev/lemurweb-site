@@ -15,8 +15,8 @@ $size-1: 4.2rem;
 $size-2: 3.3rem;
 
 //Color
-$primary: #268b52;
-$primary-light: #91dfac;
+$primary: #1f7042;
+$primary-light: #94e2af;
 
 $brown: #53321e;
 $brown-invert: findColorInvert($brown);
@@ -38,8 +38,8 @@ $panel-radius: 0;
 
 $hr-height: 1px;
 
-$card-shadow: 0 0.5em 1.5em -0.125em rgba(#000000, 0.65),
-  0 0px 0 1px rgba(#000000, 0.2);
+$card-shadow: 0.15em 0.15em 1em rgba(#000000, 1),
+  0 0px 2px 1px rgba(#000000, 0.5);
 
 @import "~bulma/sass/utilities/derived-variables.sass";
 $addColors: (
@@ -53,6 +53,7 @@ $colors: map-merge($colors, $addColors);
 @import "~bulma/bulma.sass";
 @import "./divider.css";
 @import "./background.css";
+@import "./navbar.scss";
 
 .no-hover {
   pointer-events: none;
@@ -74,72 +75,6 @@ footer {
       color: $primary;
     }
   }
-}
-
-.nav-lemur {
-  width: 16vw;
-  height: 16vw;
-  max-width: 12vh;
-  max-height: 12vh;
-  position: fixed;
-  left: 0;
-  top: 0;
-  background-color: $dark-color;
-  border-radius: 0 0 100% 0;
-  box-shadow: $card-shadow;
-  z-index: 3;
-
-  img {
-    width: 85%;
-    height: width;
-    position: absolute;
-    left: 3%;
-    z-index: 5;
-    top: -5%;
-  }
-
-  .nav-panel {
-    position: relative;
-    top: -27vh;
-    left: 0;
-    min-width: 100%;
-    border-radius: 0 0 7px 0;
-    z-index: 2;
-    height: 27vh;
-
-    transform: translate(0px);
-    transform-origin: bottom;
-    -webkit-transition: transform 0.15s ease-in;
-    transition: transform 0.15s ease-in;
-
-    .nav-text {
-      opacity: 0;
-      -webkit-transition: opacity 0.22s ease-in 0.15s;
-      transition: opacity 0.22s ease-in 0.15s;
-    }
-    .nav-show-text {
-      opacity: 1;
-    }
-
-    .panel-block {
-      padding-left: 0.8vw;
-      a {
-        color: $primary-light;
-      }
-      a:hover {
-        color: $primary;
-      }
-    }
-  }
-  .nav-show-panel {
-    transform: translate(0px, 26vh);
-    box-shadow: $card-shadow;
-  }
-}
-.nav-show-logo {
-  width: 14vh;
-  -webkit-transition: transform 0.11s ease-in;
-  transition: transform 0.11s ease-in;
 }
 
 section#header.hero .hero-body {
@@ -178,7 +113,6 @@ section#portfolio .card {
   .stack-item {
     border-bottom: 1px solid white;
   }
-
 }
 
 //sezioni home
@@ -259,6 +193,7 @@ section#work {
       height: 98%;
     }
   }
+
 }
 
 .rounded-image {
@@ -281,21 +216,9 @@ section#work {
   padding: 8px !important;
 }
 
-
-@media screen and (max-width: $fullhd) {
-  .nav-panel {
-    max-height: 14rem;
-  }
-}
-
-@media screen and (min-width: $fullhd) {
-  .nav-panel {
-    max-height: 13.5rem;
-  }
-}
-
-@media screen and (min-width: 1920px) {
-  .nav-panel {
-    max-height: 20rem;
+@media(max-width: #{$desktop - 1}) {
+  .columns.is-reversed-touch {
+    flex-direction: column-reverse;
+    display: flex;
   }
 }

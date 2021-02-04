@@ -44,13 +44,13 @@ const ContactSection = () => {
       <div className="container is-max-desktop">
         <div className="card">
           <div className="card-content">
-            <div class="content">
+            <div className="content">
               <form onSubmit={event => handleSubmit(event)}>
-                <div class="field">
-                  <label class="label">Nome</label>
-                  <div class="control">
+                <div className="field">
+                  <label className="label">Nome</label>
+                  <div className="control">
                     <input
-                      class="input"
+                      className="input"
                       type="text"
                       required
                       placeholder="..."
@@ -60,11 +60,11 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div class="field">
-                  <label class="label">Email</label>
-                  <div class="control">
+                <div className="field">
+                  <label className="label">Email</label>
+                  <div className="control">
                     <input
-                      class="input"
+                      className="input"
                       type="email"
                       required
                       placeholder="@"
@@ -74,11 +74,11 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div class="field">
-                  <label class="label">Messaggio</label>
-                  <div class="control">
+                <div className="field">
+                  <label className="label">Messaggio</label>
+                  <div className="control">
                     <textarea
-                      class="textarea"
+                      className="textarea"
                       required
                       placeholder="..."
                       value={message}
@@ -87,9 +87,9 @@ const ContactSection = () => {
                   </div>
                 </div>
 
-                <div class="field">
-                  <div class="control">
-                    <label class="checkbox">
+                <div className="field">
+                  <div className="control">
+                    <label className="checkbox">
                       <input
                         type="checkbox"
                         required
@@ -105,11 +105,11 @@ const ContactSection = () => {
                 </div>
                 <div className=" is-flex is-justify-content-center mt-5">
                   {emailSentMessage && emailSentMessage.length > 0 && (
-                    <article class="message is-warning">
-                      <div class="message-header">
+                    <article className="message is-warning">
+                      <div className="message-header">
                         <p>{emailSentMessage}</p>
                       </div>
-                      <div class="message-body">
+                      <div className="message-body">
                         Sarai ricontattato al più presto
                       </div>
                     </article>

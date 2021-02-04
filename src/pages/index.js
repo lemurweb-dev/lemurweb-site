@@ -151,11 +151,11 @@ const IndexPage = ({ data }) => {
         setIsCountingReadTime={setIsCountingReadTime}
       />
 
-      <section id="know-me" className="hero is-primary mt-6 is-medium">
+      <section id="know-me" className="hero is-primary mt-6 is-small">
         <div className="hero-body">
           <div className="container">
-            <nav className="level mx-6">
-              <div className="level-item has-text-centered">
+            <div className="columns is-reversed-touch is-vcentered is-multiline is-centered has-text-centered">
+              <div className="column is-4">
                 <Link to="/portfolio" className="link is-info">
                   <div>
                     <RiSuitcaseLine className="is-size-2" />
@@ -163,19 +163,15 @@ const IndexPage = ({ data }) => {
                   Portfolio
                 </Link>
               </div>
-              <div className="level-item has-text-centered my-5">
-                <div>
-                  <Img
-                    className="rounded-image mb-2"
-                    fluid={data.me.childImageSharp.fluid}
-                    alt="me"
-                  />
-                  <h4 className="title is-family-secondary has-text-weight-light">
-                    Know Me
-                  </h4>
-                </div>
+              <div className="column is-4 is-flex is-justify-content-center">
+                <Img
+                  className="is-hidden-touch rounded-image mb-2"
+                  fluid={data.me.childImageSharp.fluid}
+                  alt="me"
+                  style={{ width: "10em" }}
+                />
               </div>
-              <div className="level-item has-text-centered">
+              <div className="column is-4">
                 <Link to="/contact" className="link is-info">
                   <div>
                     <HiMail className="is-size-2" />
@@ -183,7 +179,25 @@ const IndexPage = ({ data }) => {
                   Contatti
                 </Link>
               </div>
-            </nav>
+              <div className="column is-8 has-text-centered is-flex is-flex-direction-column is-align-items-center">
+                <h4 className="title is-family-secondary has-text-weight-light">
+                  Know Me
+                </h4>
+                <Img
+                  className="is-hidden-desktop rounded-image mb-2"
+                  fluid={data.me.childImageSharp.fluid}
+                  alt="me"
+                  style={{ width: "10em" }}
+                />
+                <p>
+                  Ciao, sono Davide! Ho sempre avuto la passione per
+                  l'informatica e le tecnologie del web e di recente ho
+                  realizzato di voler intraprendere la strada di sviluppatore
+                  web e mobile. Le cose più importanti che metto nel mio lavoro
+                  sono creatività e passione.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>

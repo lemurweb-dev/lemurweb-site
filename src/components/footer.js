@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="is-size-7">buymeacoffee.com</div>
         </a>
         <div className="mt-6">
-          lemur illustrations by <a href="http://cello-art.netlify.app">celloart</a>
+          lemur illustrations by <a href="http://www.celloart.it">celloart</a>
         </div>
       </div>
     </footer>
