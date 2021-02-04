@@ -1,5 +1,5 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
+import React from "react"
+
 import { useStaticQuery, graphql } from "gatsby"
 import { IconContext } from "react-icons"
 
@@ -20,29 +20,27 @@ const Layout = ({ children }) => {
       }
       logo: file(relativePath: { eq: "logo-blue.png" }) {
         childImageSharp {
-          fluid {
-            ...GatsbyImageSharpFluid
+          fixed(width: 82, height: 82) {
+            ...GatsbyImageSharpFixed
           }
         }
       }
     }
   `)
 
+  console.log("logo", data.logo)
+
   return (
     <>
       <IconContext.Provider value={{ style: { verticalAlign: "middle" } }}>
         <Background />
-        <Navbar logo={data.logo.childImageSharp.fluid} />
+        <Navbar logo={data.logo.childImageSharp.fixed} />
 
         <main>{children}</main>
         <Footer />
       </IconContext.Provider>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout

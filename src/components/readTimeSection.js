@@ -24,26 +24,7 @@ const ReadTimeSection = ({ time, setIsCountingReadTime }) => (
             </div>
             <div className="column is-narrow is-size-1">{`}`}</div>
          </div>
-        {/* <nav className="level">
-          <div className="level-item has-text-centered">
-            <div>
-              <div className="heading mb-0">Grazie per aver dedicato</div>
-              <div
-                className="title my-3 is-clickable"
-                onClick={() =>
-                  setIsCountingReadTime(
-                    isCountingReadTime => !isCountingReadTime
-                  )
-                }
-              >
-                {time}
-              </div>
-              <div className="heading">
-                alla lettura della mia landing page!
-              </div>
-            </div>
-          </div>
-        </nav> */}
+
       </div>
     </div>
   </section>

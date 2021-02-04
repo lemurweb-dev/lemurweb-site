@@ -26,7 +26,7 @@ const Navbar = () => {
           </li>
           <li></li>
         </ul>
-        <img src={logo} alt="logo" className="mx-auto" />
+        <img src={logo} alt="logo" className="mx-auto" width="82" height="82" />
       </div>
     </>
   )
