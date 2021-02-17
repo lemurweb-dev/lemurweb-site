@@ -96,6 +96,27 @@ const PortfolioSection = () => {
           }
         }
       }
+      lb1: file(relativePath: { eq: "mockup/lb-mockup-1.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      lb2: file(relativePath: { eq: "mockup/lb-mockup-2.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      lb3: file(relativePath: { eq: "mockup/lb-mockup-3.png" }) {
+        childImageSharp {
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   return (
@@ -149,6 +170,18 @@ const PortfolioSection = () => {
             data.c3.childImageSharp.fluid,
           ]}
           stack={["gatsby", "bootstrap"]}
+        />
+        <PortfolioItem
+          id="lemur-blog"
+          title="[Prototipo] Lemur Blog"
+          subtitle="Prototipo di un blog con pagine extra. Completamente personalizzabile"
+          link="https://lemur-blog.netlify.app"
+          images={[
+            data.lb1.childImageSharp.fluid,
+            data.lb2.childImageSharp.fluid,
+            data.lb3.childImageSharp.fluid,
+          ]}
+          stack={["gatsby", "netlify-cms", "bulma"]}
         />
         <PortfolioItem
           id="purrflix"

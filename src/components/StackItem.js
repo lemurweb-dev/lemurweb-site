@@ -6,6 +6,7 @@ import {
   SiBootstrap,
   SiStrapi,
   SiBulma,
+  SiNetlify,
   SiMongodb,
 } from "react-icons/si"
 import { IoLanguageOutline } from "react-icons/io5"
@@ -49,6 +50,11 @@ const StackItem = ({ tech }) => {
       title = "linguaggio dinamico"
       description = "Internazionalizzazione con"
       icon = <IoLanguageOutline />
+      break
+    case "netlify-cms":
+      title = "Netlify CMS"
+      description = "Gestione dei contenuti facile e in completa autonomia con"
+      icon = <SiNetlify />
       break
     default:
       break
