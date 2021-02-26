@@ -7,112 +7,112 @@ const PortfolioSection = () => {
     query PortfolioMockups {
       sc1: file(relativePath: { eq: "mockup/sc-mockup-1.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       sc2: file(relativePath: { eq: "mockup/sc-mockup-2.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       sc3: file(relativePath: { eq: "mockup/sc-mockup-3.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       ca1: file(relativePath: { eq: "mockup/ca-mockup-1.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       ca2: file(relativePath: { eq: "mockup/ca-mockup-2.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       ca3: file(relativePath: { eq: "mockup/ca-mockup-3.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       pf1: file(relativePath: { eq: "mockup/pf-mockup-1.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       m1: file(relativePath: { eq: "mockup/m-mockup-1.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       m2: file(relativePath: { eq: "mockup/m-mockup-2.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       m3: file(relativePath: { eq: "mockup/m-mockup-3.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       c1: file(relativePath: { eq: "mockup/c-mockup-1.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       c2: file(relativePath: { eq: "mockup/c-mockup-2.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       c3: file(relativePath: { eq: "mockup/c-mockup-3.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       lb1: file(relativePath: { eq: "mockup/lb-mockup-1.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       lb2: file(relativePath: { eq: "mockup/lb-mockup-2.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }
       }
       lb3: file(relativePath: { eq: "mockup/lb-mockup-3.png" }) {
         childImageSharp {
-          fluid {
+          fluid(maxWidth: 800, quality: 80) {
             ...GatsbyImageSharpFluid
           }
         }

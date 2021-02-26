@@ -19,9 +19,17 @@ const PortfolioItemImage = ({ images }) => {
   }, [imageIndex])
 
   return images.map((img, i) => (
-    <Img
+    // <Img
+    //   key={i}
+    //   fluid={img}
+    //   alt={`portfolio-${i}`}
+    //   className={
+    //     i === imageIndex ? `portfolio-image-visible` : `portfolio-image`
+    //   }
+    // />
+    <img
       key={i}
-      fluid={img}
+      src={img.src}
       alt={`portfolio-${i}`}
       className={
         i === imageIndex ? `portfolio-image-visible` : `portfolio-image`

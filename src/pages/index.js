@@ -192,7 +192,7 @@ const IndexPage = ({ data }) => {
                 <p>
                   Ciao, sono Davide! Ho sempre avuto la passione per
                   l'informatica e le tecnologie del web e di recente ho
-                  realizzato di voler intraprendere la strada di sviluppatore
+                  deciso di intraprendere la strada di sviluppatore
                   web e mobile. Le cose più importanti che metto nel mio lavoro
                   sono creatività e passione.
                 </p>
