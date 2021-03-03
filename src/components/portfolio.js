@@ -117,6 +117,27 @@ const PortfolioSection = () => {
           }
         }
       }
+      pp1: file(relativePath: { eq: "mockup/pp-mockup-1.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      pp2: file(relativePath: { eq: "mockup/pp-mockup-2.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      pp3: file(relativePath: { eq: "mockup/pp-mockup-3.png" }) {
+        childImageSharp {
+          fluid(maxWidth: 800, quality: 80) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
   return (
@@ -161,7 +182,7 @@ const PortfolioSection = () => {
         />
         <PortfolioItem
           id="spacecowboy"
-          title="[Prototipo] Space Cowboy"
+          title="[Template] Space Cowboy"
           subtitle="Prototipo di un sito moderno e funzionale di esempio. Completamente personalizzabile"
           link="https://lemur-space-cowboy.netlify.app"
           images={[
@@ -172,8 +193,20 @@ const PortfolioSection = () => {
           stack={["gatsby", "bootstrap"]}
         />
         <PortfolioItem
+          id="big-pp"
+          title="[Template] Big PP"
+          subtitle="Prototipo di un sito per aziende con sezione blog e pagine extra. Completamente personalizzabile"
+          link="https://lemur-big-pp.netlify.app"
+          images={[
+            data.pp1.childImageSharp.fluid,
+            data.pp2.childImageSharp.fluid,
+            data.pp3.childImageSharp.fluid,
+          ]}
+          stack={["gatsby", "netlify-cms", "bulma"]}
+        />
+        <PortfolioItem
           id="lemur-blog"
-          title="[Prototipo] Lemur Blog"
+          title="[Template] Lemur Blog"
           subtitle="Prototipo di un blog con pagine extra. Completamente personalizzabile"
           link="https://lemur-blog.netlify.app"
           images={[
