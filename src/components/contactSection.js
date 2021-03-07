@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import Image from "gatsby-image"
 
 import { HiMail } from "react-icons/hi"
 

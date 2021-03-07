@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react"
-import Img from "gatsby-image"
 
 const PortfolioItemImage = ({ images }) => {
   const [imageIndex, setImageIndex] = useState(0)

@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import Image from "gatsby-image"
+
 import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 import { FaAngleDown } from "react-icons/fa"

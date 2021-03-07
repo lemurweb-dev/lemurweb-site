@@ -13,7 +13,7 @@ const PortfolioItem = ({ id, title, subtitle, images, link, stack }) => {
     <>
       <div id={id} className="hero is-primary-light is-medium">
         <div className="hero-body py-5">
-          <div className="container">
+          <div className="container is-max-desktop">
             <div className="card">
               <div className="card-content has-text-centered p-3">
                 <div className="columns is-vcentered">

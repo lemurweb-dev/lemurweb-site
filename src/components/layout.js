@@ -5,10 +5,10 @@ import { IconContext } from "react-icons"
 
 import "../styles/layout.scss"
 
-import { siteMetadata } from "../../gatsby-config"
 import Footer from "./footer"
-import Navbar from "./navbar"
+// import Navbar from "./navbar"
 import Background from "./Background"
+import SideMenu from "./sideMenu"
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -28,15 +28,16 @@ const Layout = ({ children }) => {
     }
   `)
 
-  console.log("logo", data.logo)
-
   return (
     <>
       <IconContext.Provider value={{ style: { verticalAlign: "middle" } }}>
         <Background />
-        <Navbar logo={data.logo.childImageSharp.fixed} />
+        {/* <Navbar logo={data.logo.childImageSharp.fixed} /> */}
+
+        <SideMenu />
 
         <main>{children}</main>
+
         <Footer />
       </IconContext.Provider>
     </>

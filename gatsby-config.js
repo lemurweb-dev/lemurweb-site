@@ -5,6 +5,32 @@ module.exports = {
     author: `@lemurweb`,
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-google-fonts-v2`,
+      options: {
+        fonts: [
+          {
+            family: "Ubuntu",
+            weights: ["300", "400", "500", "600", "700"],
+          },
+          {
+            family: "Quicksand",
+            weights: ["300", "400"],
+          },
+          {
+            family: "Josefin Sans",
+            weights: ["700"],
+          },
+        ],
+      },
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.js`),
+      },
+    },
+    `gatsby-plugin-image`,
     `gatsby-plugin-anchor-links`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
@@ -29,7 +55,7 @@ module.exports = {
         icon: `src/images/logo-blue.png`, // This path is relative to the root of the site.
       },
     },
-    // { 
+    // {
     //   resolve: `gatsby-plugin-purgecss`,
     //   options: {
     //     printRejected: true, // Print removed selectors and processed file names

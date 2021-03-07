@@ -1,0 +1,62 @@
+aside.menu {
+  @media (min-width: $desktop + 1px) {
+    height: 100%;
+  }
+
+  position: fixed;
+
+  z-index: 666;
+
+  font-family: $family-menu;
+
+  box-shadow: $card-shadow;
+
+  &.show {
+    min-width: 12vw;
+
+    .menu-trigger svg {
+      transform: rotate(0);
+    }
+  }
+
+  .menu-list {
+    text-transform: uppercase;
+    text-align: center;
+
+    a {
+      margin-top: 1em;
+      margin-bottom: 1em;
+      padding-left: 1em;
+      padding-right: 1em;
+    }
+  }
+
+  .menu-trigger svg {
+    transform: rotate(90deg);
+    transition: transform 0.15s linear;
+  }
+
+  @media (max-width: $desktop + 1px) {
+    width: 100%;
+    .menu-list a:not(.menu-trigger) {
+      display: none;
+      font-size: 0.8em;
+    }
+
+    .menu-list {
+      a {
+        margin-top: .1em;
+        margin-bottom: .1em;
+        padding-left: .1em;
+        padding-right: .1em;
+      }
+    }
+
+    &.show {
+      .menu-list a {
+        display: block;
+      }
+    }
+  }
+
+}

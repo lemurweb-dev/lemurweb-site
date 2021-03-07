@@ -1,5 +1,5 @@
-@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@200;300;400;500;600;700&display=swap");
+// @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;700&display=swap");
 
 // 1. Import the initial variables
 @import "~bulma/sass/utilities/initial-variables.sass";
@@ -8,6 +8,7 @@
 //Font & text
 $family-serif: "Ubuntu", sans-serif;
 $family-titles: "Quicksand", sans-serif;
+$family-menu: "Josefin Sans", sans-serif;
 $family-primary: $family-serif;
 $family-secondary: $family-titles;
 
@@ -41,6 +42,11 @@ $hr-height: 1px;
 $card-shadow: 0.15em 0.15em 1em rgba(#000000, 1),
   0 0px 2px 1px rgba(#000000, 0.5);
 
+$menu-item-color: $primary-light;
+$menu-item-hover-color: $dark;
+$menu-item-hover-background-color: $primary-light;
+$menu-item-radius: 0;
+
 @import "~bulma/sass/utilities/derived-variables.sass";
 $addColors: (
   "secondary": (
@@ -54,6 +60,7 @@ $colors: map-merge($colors, $addColors);
 @import "./divider.css";
 @import "./background.css";
 @import "./navbar.scss";
+@import "./sideMenu.scss";
 
 .no-hover {
   pointer-events: none;
@@ -193,7 +200,6 @@ section#work {
       height: 98%;
     }
   }
-
 }
 
 .rounded-image {
@@ -216,7 +222,7 @@ section#work {
   padding: 8px !important;
 }
 
-@media(max-width: #{$desktop - 1}) {
+@media (max-width: #{$desktop - 1}) {
   .columns.is-reversed-touch {
     flex-direction: column-reverse;
     display: flex;

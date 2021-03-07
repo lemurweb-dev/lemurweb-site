@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react"
 import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import ReactTooltip from "react-tooltip"
 
 import Header from "../components/header"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 import HomeSection from "../components/homeSection"
 import ReadTimeSection from "../components/readTimeSection"
 
-import { RiSuitcaseLine } from "react-icons/ri"
-import { HiMail } from "react-icons/hi"
+import { BsBriefcase } from "react-icons/bs"
+import { AiOutlineMail } from "react-icons/ai"
 
 const IndexPage = ({ data }) => {
   const [readTime, setReadTime] = useState(0)
@@ -32,7 +31,7 @@ const IndexPage = ({ data }) => {
   }, [isCountingReadTime, readTime])
 
   return (
-    <Layout>
+    <>
       <SEO title="lemurweb" />
       <Header />
       <section id="work">
@@ -57,7 +56,7 @@ const IndexPage = ({ data }) => {
               </p>
             </>
           }
-          image={data.l.childImageSharp.fluid}
+          image={getImage(data.l)}
         />
         <HomeSection
           odd
@@ -80,7 +79,7 @@ const IndexPage = ({ data }) => {
               </p>
             </>
           }
-          image={data.e.childImageSharp.fluid}
+          image={getImage(data.e)}
         />
         <HomeSection
           id={"build"}
@@ -113,7 +112,7 @@ const IndexPage = ({ data }) => {
               <p>Ogni cosa che costruisco è testata per essere al top!</p>
             </>
           }
-          image={data.b.childImageSharp.fluid}
+          image={getImage(data.b)}
         />
         <ReactTooltip
           className="tooltip"
@@ -158,15 +157,15 @@ const IndexPage = ({ data }) => {
               <div className="column is-4">
                 <Link to="/portfolio" className="link is-info">
                   <div>
-                    <RiSuitcaseLine className="is-size-2" />
+                    <BsBriefcase className="is-size-2" />
                   </div>
                   Portfolio
                 </Link>
               </div>
               <div className="column is-4 is-flex is-justify-content-center">
-                <Img
+                <GatsbyImage
                   className="is-hidden-touch rounded-image mb-2"
-                  fluid={data.me.childImageSharp.fluid}
+                  image={getImage(data.me)}
                   alt="me"
                   style={{ width: "10em" }}
                 />
@@ -174,7 +173,7 @@ const IndexPage = ({ data }) => {
               <div className="column is-4">
                 <Link to="/contact" className="link is-info">
                   <div>
-                    <HiMail className="is-size-2" />
+                    <AiOutlineMail className="is-size-2" />
                   </div>
                   Contatti
                 </Link>
@@ -183,25 +182,25 @@ const IndexPage = ({ data }) => {
                 <h4 className="title is-family-secondary has-text-weight-light">
                   Know Me
                 </h4>
-                <Img
+                <GatsbyImage
                   className="is-hidden-desktop rounded-image mb-2"
-                  fluid={data.me.childImageSharp.fluid}
+                  image={getImage(data.me)}
                   alt="me"
                   style={{ width: "10em" }}
                 />
                 <p>
                   Ciao, sono Davide! Ho sempre avuto la passione per
-                  l'informatica e le tecnologie del web e di recente ho
-                  deciso di intraprendere la strada di sviluppatore
-                  web e mobile. Le cose più importanti che metto nel mio lavoro
-                  sono creatività e passione.
+                  l'informatica e le tecnologie del web e di recente ho deciso
+                  di intraprendere la strada di sviluppatore web e mobile. Le
+                  cose più importanti che metto nel mio lavoro sono creatività e
+                  passione.
                 </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </Layout>
+    </>
   )
 }
 
@@ -210,30 +209,27 @@ export const pageQuery = graphql`
   query indexPageQuery {
     l: file(relativePath: { eq: "look.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 600, placeholder: BLURRED)
       }
     }
     e: file(relativePath: { eq: "explore.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 600, placeholder: BLURRED)
       }
     }
     b: file(relativePath: { eq: "build.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED, width: 600, placeholder: BLURRED)
       }
     }
     me: file(relativePath: { eq: "me.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(
+          layout: CONSTRAINED
+          width: 400
+          height: 400
+          placeholder: BLURRED
+        )
       }
     }
   }

@@ -1,7 +1,5 @@
 import React from "react"
-import Image from "gatsby-image"
 
-import { HiMail } from "react-icons/hi"
 import { BiCoffeeTogo } from "react-icons/bi"
 
 const Footer = () => {

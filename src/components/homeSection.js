@@ -1,8 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
-import Img from "gatsby-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const HomeSection = ({ id, title, subtitle, head, body, image, odd }) => {
+
   return (
     <section id={id}>
       <div className="hero is-medium">
@@ -15,7 +15,7 @@ const HomeSection = ({ id, title, subtitle, head, body, image, odd }) => {
             >
               {image && (
                 <div className="column is-5 p-6">
-                  <Img fluid={image} className="mx-6" alt={`home-${title}`} />
+                  <GatsbyImage className="mx-6" image={image} alt={`home-${title}`} />
                 </div>
               )}
               <div className={`column is-5 ${
